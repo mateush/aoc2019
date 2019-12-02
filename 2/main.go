@@ -65,6 +65,7 @@ func main() {
 			processNumbers(inputCopy)
 			if inputCopy[0] == 19690720 {
 				fmt.Println(i, ",", j)
+				break
 			}
 		}
 	}
