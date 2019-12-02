@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func reqiuredFuel(mass int) int {
+func calculateReqiuredFuel(mass int) int {
 	fuel := (mass / 3) - 2
 	if fuel >= 0 {
 		return fuel
@@ -15,11 +15,11 @@ func reqiuredFuel(mass int) int {
 	return 0
 }
 
-func improvedReqiuredFuel(mass int) int {
-	fuel := reqiuredFuel(mass)
+func improvedCalculateReqiuredFuel(mass int) int {
+	fuel := calculateReqiuredFuel(mass)
 	sum := fuel
 	for fuel > 0 {
-		fuel = reqiuredFuel(fuel)
+		fuel = calculateReqiuredFuel(fuel)
 		sum += fuel
 	}
 	return sum
@@ -45,7 +45,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		sum += improvedReqiuredFuel(mass)
+		sum += improvedCalculateReqiuredFuel(mass)
 
 	}
 
